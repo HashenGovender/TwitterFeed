@@ -1,0 +1,12 @@
+C:\Users\Hashen\AppData\Local\Temporary Projects\TwitterFeed\bin\Debug\TwitterFeed.exe.config
+C:\Users\Hashen\AppData\Local\Temporary Projects\TwitterFeed\bin\Debug\TwitterFeed.exe
+C:\Users\Hashen\AppData\Local\Temporary Projects\TwitterFeed\bin\Debug\TwitterFeed.pdb
+C:\Users\Hashen\AppData\Local\Temporary Projects\TwitterFeed\obj\Debug\TwitterFeed.csprojResolveAssemblyReference.cache
+C:\Users\Hashen\AppData\Local\Temporary Projects\TwitterFeed\obj\Debug\TwitterFeed.exe
+C:\Users\Hashen\AppData\Local\Temporary Projects\TwitterFeed\obj\Debug\TwitterFeed.pdb
+d:\Projects\TwitterFeed\TwitterFeed\bin\Debug\TwitterFeed.exe.config
+d:\Projects\TwitterFeed\TwitterFeed\obj\Debug\TwitterFeed.exe
+d:\Projects\TwitterFeed\TwitterFeed\obj\Debug\TwitterFeed.pdb
+d:\Projects\TwitterFeed\TwitterFeed\bin\Debug\TwitterFeed.exe
+d:\Projects\TwitterFeed\TwitterFeed\bin\Debug\TwitterFeed.pdb
+d:\Projects\TwitterFeed\TwitterFeed\obj\Debug\TwitterFeed.csprojResolveAssemblyReference.cache

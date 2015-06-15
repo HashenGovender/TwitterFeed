@@ -1,0 +1,49 @@
+﻿
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+# On branch master
+# Your branch is up-to-date with 'origin/master'.
+#
+# Changes to be committed:
+	new file:   TwitterFeed.sln
+#	new file:   TwitterFeed.v11.suo
+#	new file:   TwitterFeed/App.config
+#	new file:   TwitterFeed/Program.cs
+#	new file:   TwitterFeed/Properties/AssemblyInfo.cs
+#	new file:   TwitterFeed/TwitterFeed.csproj
+#	new file:   TwitterFeed/TwitterFeed.csproj.user
+#	new file:   TwitterFeed/bin/Debug/TwitterFeed.exe
+#	new file:   TwitterFeed/bin/Debug/TwitterFeed.exe.config
+#	new file:   TwitterFeed/bin/Debug/TwitterFeed.pdb
+#	new file:   TwitterFeed/bin/Debug/TwitterFeed.vshost.exe
+#	new file:   TwitterFeed/bin/Debug/TwitterFeed.vshost.exe.config
+#	new file:   TwitterFeed/bin/Debug/tweet.txt
+#	new file:   TwitterFeed/bin/Debug/user.txt
+#	new file:   TwitterFeed/bin/Release/TwitterFeed.exe
+#	new file:   TwitterFeed/bin/Release/TwitterFeed.exe.config
+#	new file:   TwitterFeed/bin/Release/TwitterFeed.pdb
+#	new file:   TwitterFeed/bin/Release/TwitterFeed.vshost.exe
+#	new file:   TwitterFeed/bin/Release/TwitterFeed.vshost.exe.config
+#	new file:   TwitterFeed/bin/Release/TwitterFeed.vshost.exe.manifest
+#	new file:   TwitterFeed/bin/Release/tweet.txt
+#	new file:   TwitterFeed/bin/Release/user.txt
+#	new file:   TwitterFeed/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache
+#	new file:   TwitterFeed/obj/Debug/TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs
+#	new file:   TwitterFeed/obj/Debug/TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs
+#	new file:   TwitterFeed/obj/Debug/TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs
+#	new file:   TwitterFeed/obj/Debug/TwitterFeed.csproj.FileListAbsolute.txt
+#	new file:   TwitterFeed/obj/Debug/TwitterFeed.csprojResolveAssemblyReference.cache
+#	new file:   TwitterFeed/obj/Debug/TwitterFeed.exe
+#	new file:   TwitterFeed/obj/Debug/TwitterFeed.pdb
+#	new file:   TwitterFeed/obj/Release/DesignTimeResolveAssemblyReferencesInput.cache
+#	new file:   TwitterFeed/obj/Release/TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs
+#	new file:   TwitterFeed/obj/Release/TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs
+#	new file:   TwitterFeed/obj/Release/TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs
+#	new file:   TwitterFeed/obj/Release/TwitterFeed.csproj.FileListAbsolute.txt
+#	new file:   TwitterFeed/obj/Release/TwitterFeed.exe
+#	new file:   TwitterFeed/obj/Release/TwitterFeed.pdb
+#
+# Untracked files:
+#	.gitignore
+#
+
