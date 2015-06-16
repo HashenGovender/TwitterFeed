@@ -9,7 +9,7 @@ namespace TwitterFeed
 {
     class Program
     {
-        // Declaration of structures used to hold the user and tweet data
+        // Declaration of structures used to hold the user, follower and tweet data
         private static SortedSet<string> users; // Using a SortedSet rather than a List for performance advantages when comparing items
         private static HashSet<Tuple<string, string>> userFollowers; // Using a HashSet rather than a List for performance advantages when checking for (CONTAINS) item
         private static List<Tuple<string, string>> tweets;
@@ -28,7 +28,7 @@ namespace TwitterFeed
                 Environment.Exit(0);
             }
 
-            //Instantite local variables to store user and tweet filenames
+            //Instantite variables to store user and tweet filenames
             usersFileName = args[0];
             tweetsFileName = args[1];
 
@@ -62,25 +62,43 @@ namespace TwitterFeed
                 {
                     curLine++;
 
+                    //Try and locate the index of the "follows" keyword seperator
                     int indFollowsSeperator = line.IndexOf(followsSeperator);
+
+                    //If seperator is found and there is at least one character before the seperator process the line
                     if (indFollowsSeperator > 0)
                     {
+                        //Extract the user name from the line
                         string user = line.Substring(0, indFollowsSeperator);
 
+                        //Add the user to the users sortedset, duplicates will be ignored
                         users.Add(user);
 
+                        //Extract the followers from the rest of the line after the seperator
                         string followers = line.Substring(indFollowsSeperator + followsSeperatorLength);
                         string[] followersSeperator = { ", " };
 
+                        //Split up the followers string using the followersSeperator and iterate over
                         foreach (string follower in followers.Split(followersSeperator, StringSplitOptions.RemoveEmptyEntries))
                         {
+                            //Add follower as a user to the users sortedset, duplicates will be ignored
                             users.Add(follower);
+                            //Add user-follower entry to the userFollowers HashSet, duplicates will be ignored
                             userFollowers.Add(new Tuple<string, string>(user, follower));
                         }
                     }
                     else
                     {
-                        Console.WriteLine(string.Format("Error parsing line {0} in user file. Could not find \"follows\" keyword", curLine));
+                        //If user name is blank (whitespace), display error
+                        if (indFollowsSeperator == 0)
+                        {
+                            Console.WriteLine(string.Format("Error parsing line {0} in user file. User name is empty", curLine));
+                        }
+                        //If user seperator not found, display error
+                        else
+                        {
+                            Console.WriteLine(string.Format("Error parsing line {0} in user file. Could not find \"follows\" keyword", curLine));
+                        }
                         Environment.Exit(0);
                     }
                 }
@@ -107,27 +125,44 @@ namespace TwitterFeed
                 {
                     curLine++;
 
+                    //Try and locate the index of the "> " keyword seperator
                     int indUserTweetSeperator = line.IndexOf(userTweetSeperator);
+
+                    //If seperator is found and there is at least one character before the seperator process the line
                     if (indUserTweetSeperator > 0)
                     {
+                        //Extract the user name from the line
                         string user = line.Substring(0, indUserTweetSeperator);
+                        //Extract the tweet text from the line
                         string tweet = line.Substring(indUserTweetSeperator + userTweetSeperatorLength);
 
+                        //If tweet text is empty, display error
                         if (string.IsNullOrEmpty(tweet)) {
                             Console.WriteLine(string.Format("Error parsing line {0} in tweet file. Tweet is empty", curLine));
                             Environment.Exit(0);
                         }
+                        //If tweet text is greater than 140 chars display error
                         else if (tweet.Length > 140)
                         {
                             Console.WriteLine(string.Format("Error parsing line {0} in tweet file. Tweet is greater than 140 characters", curLine));
                             Environment.Exit(0);
                         }
 
+                        //add user-tweet entry to the tweets list
                         tweets.Add(new Tuple<string, string>(user, tweet));
                     }
                     else
                     {
-                        Console.WriteLine(string.Format("Error parsing line {0} in tweet file. Could not find \"> \" seperator", curLine));
+                        //If user name is blank (whitespace), display error
+                        if (indUserTweetSeperator == 0)
+                        {
+                            Console.WriteLine(string.Format("Error parsing line {0} in tweet file. User name is empty", curLine));
+                        }
+                        //If user seperator not found, display error
+                        else
+                        {
+                            Console.WriteLine(string.Format("Error parsing line {0} in tweet file. Could not find \"> \" seperator", curLine));
+                        }
                         Environment.Exit(0);
                     }
                 }

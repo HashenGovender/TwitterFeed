@@ -3,3 +3,4 @@ d:\Projects\TwitterFeed\TwitterFeed\bin\Release\TwitterFeed.exe
 d:\Projects\TwitterFeed\TwitterFeed\bin\Release\TwitterFeed.pdb
 d:\Projects\TwitterFeed\TwitterFeed\obj\Release\TwitterFeed.exe
 d:\Projects\TwitterFeed\TwitterFeed\obj\Release\TwitterFeed.pdb
+d:\Projects\TwitterFeed\TwitterFeed\obj\Release\TwitterFeed.csprojResolveAssemblyReference.cache
