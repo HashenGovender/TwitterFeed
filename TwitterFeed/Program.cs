@@ -25,7 +25,7 @@ namespace TwitterFeed
                 Console.WriteLine("Please specify the path and filename of the user and tweet txt files as arguments 1 and 2 respectively");
                 Console.WriteLine("USAGE: TwitterFeed.exe User_TXT_FileName Tweet_TXT_FileName");
                 Console.WriteLine();
-                Environment.Exit(0);
+                return;
             }
 
             //Instantite variables to store user and tweet filenames
@@ -38,18 +38,21 @@ namespace TwitterFeed
             tweets = new List<Tuple<string, string>>();
 
             //Read user data
-            ReadUsers();
+            if (!ReadUsers())
+                return;
 
             //Read tweet data
-            ReadTweets();
+            if (!ReadTweets())
+                return;
 
             //Output formatted twitter feed
-            DisplayTwitterFeed();
+            if (!DisplayTwitterFeed())
+                return;
         }
 
 
         //Read user file and copy user data into Set structures
-        private static void ReadUsers()
+        private static bool ReadUsers()
         {
             try
             {
@@ -97,22 +100,24 @@ namespace TwitterFeed
                         //If user seperator not found, display error
                         else
                         {
-                            Console.WriteLine(string.Format("Error parsing line {0} in user file. Could not find \"follows\" keyword", curLine));
+                            Console.WriteLine(string.Format("Error parsing line {0} in user file. Could not find \" follows \" keyword", curLine));
                         }
-                        Environment.Exit(0);
+                        return false;
                     }
                 }
             }
             catch (Exception ex)
             {
                 Console.WriteLine(string.Format("Could not read from user file: \"{0}\". Please ensure this file exists and is readable", usersFileName));
-                Environment.Exit(0);
+                return false;
             }
+
+            return true;
         }
         
 
         //Read tweet file and copy tweets into List structure
-        private static void ReadTweets()
+        private static bool ReadTweets()
         {
             try
             {
@@ -139,13 +144,13 @@ namespace TwitterFeed
                         //If tweet text is empty, display error
                         if (string.IsNullOrEmpty(tweet)) {
                             Console.WriteLine(string.Format("Error parsing line {0} in tweet file. Tweet is empty", curLine));
-                            Environment.Exit(0);
+                            return false;
                         }
                         //If tweet text is greater than 140 chars display error
                         else if (tweet.Length > 140)
                         {
                             Console.WriteLine(string.Format("Error parsing line {0} in tweet file. Tweet is greater than 140 characters", curLine));
-                            Environment.Exit(0);
+                            return false;
                         }
 
                         //add user-tweet entry to the tweets list
@@ -163,20 +168,22 @@ namespace TwitterFeed
                         {
                             Console.WriteLine(string.Format("Error parsing line {0} in tweet file. Could not find \"> \" seperator", curLine));
                         }
-                        Environment.Exit(0);
+                        return false;
                     }
                 }
             }
             catch (Exception ex)
             {
                 Console.WriteLine(string.Format("Could not read from tweet file: \"{0}\". Please ensure this file exists and is readable", tweetsFileName));
-                Environment.Exit(0);
+                return false;
             }
+
+            return true;
         }
 
 
         //Read data structures and output twitter feed per user to the console
-        private static void DisplayTwitterFeed()
+        private static bool DisplayTwitterFeed()
         {
             try
             {
@@ -201,8 +208,10 @@ namespace TwitterFeed
             catch (Exception ex)
             {
                 Console.WriteLine("An error occured trying to display twitter feed");
-                Environment.Exit(0);
+                return false;
             }
+
+            return true;
         }
     }
 }
